@@ -305,6 +305,8 @@ int main(void)
         //nrf_gpio_pin_set(UPDATE_IN_PROGRESS_LED);
         // Select a bank region to use as application region.
         // @note: Only applications running from DFU_BANK_0_REGION_START is supported.
+        nrf_gpio_range_cfg_input(LED_START, LED_STOP, NRF_GPIO_PIN_NOPULL);
+        nrf_gpio_cfg_input (BOOTLOADER_BUTTON, NRF_GPIO_PIN_NOPULL);
         bootloader_app_start(DFU_BANK_0_REGION_START);
     }
     
